@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmosphericScatteringTest", "AtmosphericScatteringTest.csproj", "{306D35B1-A355-4879-B98C-863A35BE2795}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farseer Physics", "..\Farseer-Physics\Branches\Class\Farseer Physics.csproj", "{A4610E4C-DD34-428B-BABB-779CA0B5993A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{306D35B1-A355-4879-B98C-863A35BE2795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{306D35B1-A355-4879-B98C-863A35BE2795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{306D35B1-A355-4879-B98C-863A35BE2795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{306D35B1-A355-4879-B98C-863A35BE2795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4610E4C-DD34-428B-BABB-779CA0B5993A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4610E4C-DD34-428B-BABB-779CA0B5993A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4610E4C-DD34-428B-BABB-779CA0B5993A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4610E4C-DD34-428B-BABB-779CA0B5993A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
