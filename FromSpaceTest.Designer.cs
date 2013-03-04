@@ -30,6 +30,12 @@
         {
             this.pnlGround = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nmrSamples = new System.Windows.Forms.NumericUpDown();
+            this.lblSamples = new System.Windows.Forms.Label();
+            this.nmrWavelengthB = new System.Windows.Forms.NumericUpDown();
+            this.nmrWavelengthG = new System.Windows.Forms.NumericUpDown();
+            this.nmrWavelengthR = new System.Windows.Forms.NumericUpDown();
+            this.lblWavelength = new System.Windows.Forms.Label();
             this.nmrG = new System.Windows.Forms.NumericUpDown();
             this.lblG = new System.Windows.Forms.Label();
             this.nmrKm = new System.Windows.Forms.NumericUpDown();
@@ -52,13 +58,11 @@
             this.lblCamPos = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.pnlAtmosphere = new System.Windows.Forms.Panel();
-            this.nmrWavelengthB = new System.Windows.Forms.NumericUpDown();
-            this.nmrWavelengthG = new System.Windows.Forms.NumericUpDown();
-            this.nmrWavelengthR = new System.Windows.Forms.NumericUpDown();
-            this.lblWavelength = new System.Windows.Forms.Label();
-            this.nmrSamples = new System.Windows.Forms.NumericUpDown();
-            this.lblSamples = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSamples)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrKm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrKr)).BeginInit();
@@ -71,10 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmrCamPosZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCamPosY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCamPosX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrSamples)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGround
@@ -124,6 +124,90 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(252, 542);
             this.panel2.TabIndex = 1;
+            // 
+            // nmrSamples
+            // 
+            this.nmrSamples.Location = new System.Drawing.Point(84, 254);
+            this.nmrSamples.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.nmrSamples.Name = "nmrSamples";
+            this.nmrSamples.Size = new System.Drawing.Size(69, 20);
+            this.nmrSamples.TabIndex = 26;
+            // 
+            // lblSamples
+            // 
+            this.lblSamples.AutoSize = true;
+            this.lblSamples.Location = new System.Drawing.Point(13, 256);
+            this.lblSamples.Name = "lblSamples";
+            this.lblSamples.Size = new System.Drawing.Size(47, 13);
+            this.lblSamples.TabIndex = 25;
+            this.lblSamples.Text = "Sampels";
+            // 
+            // nmrWavelengthB
+            // 
+            this.nmrWavelengthB.DecimalPlaces = 2;
+            this.nmrWavelengthB.Location = new System.Drawing.Point(200, 12);
+            this.nmrWavelengthB.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nmrWavelengthB.Minimum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            -2147483648});
+            this.nmrWavelengthB.Name = "nmrWavelengthB";
+            this.nmrWavelengthB.Size = new System.Drawing.Size(48, 20);
+            this.nmrWavelengthB.TabIndex = 24;
+            // 
+            // nmrWavelengthG
+            // 
+            this.nmrWavelengthG.DecimalPlaces = 2;
+            this.nmrWavelengthG.Location = new System.Drawing.Point(140, 12);
+            this.nmrWavelengthG.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nmrWavelengthG.Minimum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            -2147483648});
+            this.nmrWavelengthG.Name = "nmrWavelengthG";
+            this.nmrWavelengthG.Size = new System.Drawing.Size(54, 20);
+            this.nmrWavelengthG.TabIndex = 23;
+            // 
+            // nmrWavelengthR
+            // 
+            this.nmrWavelengthR.DecimalPlaces = 2;
+            this.nmrWavelengthR.Location = new System.Drawing.Point(84, 12);
+            this.nmrWavelengthR.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nmrWavelengthR.Minimum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            -2147483648});
+            this.nmrWavelengthR.Name = "nmrWavelengthR";
+            this.nmrWavelengthR.Size = new System.Drawing.Size(50, 20);
+            this.nmrWavelengthR.TabIndex = 22;
+            // 
+            // lblWavelength
+            // 
+            this.lblWavelength.AutoSize = true;
+            this.lblWavelength.Location = new System.Drawing.Point(3, 14);
+            this.lblWavelength.Name = "lblWavelength";
+            this.lblWavelength.Size = new System.Drawing.Size(62, 13);
+            this.lblWavelength.TabIndex = 21;
+            this.lblWavelength.Text = "wavelength";
             // 
             // nmrG
             // 
@@ -437,90 +521,6 @@
             this.pnlAtmosphere.Size = new System.Drawing.Size(406, 521);
             this.pnlAtmosphere.TabIndex = 2;
             // 
-            // nmrWavelengthB
-            // 
-            this.nmrWavelengthB.DecimalPlaces = 2;
-            this.nmrWavelengthB.Location = new System.Drawing.Point(200, 12);
-            this.nmrWavelengthB.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nmrWavelengthB.Minimum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            -2147483648});
-            this.nmrWavelengthB.Name = "nmrWavelengthB";
-            this.nmrWavelengthB.Size = new System.Drawing.Size(48, 20);
-            this.nmrWavelengthB.TabIndex = 24;
-            // 
-            // nmrWavelengthG
-            // 
-            this.nmrWavelengthG.DecimalPlaces = 2;
-            this.nmrWavelengthG.Location = new System.Drawing.Point(140, 12);
-            this.nmrWavelengthG.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nmrWavelengthG.Minimum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            -2147483648});
-            this.nmrWavelengthG.Name = "nmrWavelengthG";
-            this.nmrWavelengthG.Size = new System.Drawing.Size(54, 20);
-            this.nmrWavelengthG.TabIndex = 23;
-            // 
-            // nmrWavelengthR
-            // 
-            this.nmrWavelengthR.DecimalPlaces = 2;
-            this.nmrWavelengthR.Location = new System.Drawing.Point(84, 12);
-            this.nmrWavelengthR.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nmrWavelengthR.Minimum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            -2147483648});
-            this.nmrWavelengthR.Name = "nmrWavelengthR";
-            this.nmrWavelengthR.Size = new System.Drawing.Size(50, 20);
-            this.nmrWavelengthR.TabIndex = 22;
-            // 
-            // lblWavelength
-            // 
-            this.lblWavelength.AutoSize = true;
-            this.lblWavelength.Location = new System.Drawing.Point(3, 14);
-            this.lblWavelength.Name = "lblWavelength";
-            this.lblWavelength.Size = new System.Drawing.Size(58, 13);
-            this.lblWavelength.TabIndex = 21;
-            this.lblWavelength.Text = "v3CamPos";
-            // 
-            // nmrSamples
-            // 
-            this.nmrSamples.Location = new System.Drawing.Point(84, 254);
-            this.nmrSamples.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.nmrSamples.Name = "nmrSamples";
-            this.nmrSamples.Size = new System.Drawing.Size(69, 20);
-            this.nmrSamples.TabIndex = 26;
-            // 
-            // lblSamples
-            // 
-            this.lblSamples.AutoSize = true;
-            this.lblSamples.Location = new System.Drawing.Point(13, 256);
-            this.lblSamples.Name = "lblSamples";
-            this.lblSamples.Size = new System.Drawing.Size(15, 13);
-            this.lblSamples.TabIndex = 25;
-            this.lblSamples.Text = "G";
-            // 
             // FromSpaceTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,6 +533,10 @@
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSamples)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrKm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrKr)).EndInit();
@@ -545,10 +549,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmrCamPosZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCamPosY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCamPosX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrWavelengthR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrSamples)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

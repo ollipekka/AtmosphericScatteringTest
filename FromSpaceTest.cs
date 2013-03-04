@@ -41,6 +41,8 @@ namespace AtmosphericScatteringTest
             pnlAtmosphere.BackColor = Color.Black;
             pnlGround.BackColor = Color.Black;
 
+            btnGenerate_Click(null, null);
+
         }
 
        
@@ -139,7 +141,8 @@ namespace AtmosphericScatteringTest
                         float fDepth = (float)Math.Exp(fScaleOverScaleDepth * (fInnerRadius - fHeight));
                         float fLightAngle = Vector3.Dot(v3LightPos, v3SamplePoint) / fHeight;
                         float fCameraAngle = Vector3.Dot(v3Ray, v3SamplePoint) / fHeight;
-                        fCameraAngle = 1;
+                        //fCameraAngle = MathHelper.Clamp(fCameraAngle, 0, 1);
+                        //fCameraAngle = 1;
                         float fScatter = (fStartOffset + fDepth * (Scale(fLightAngle, fScaleDepth) - Scale(fCameraAngle, fScaleDepth)));
                         Vector3 v3Attenuate = Exp((v3InvWavelength * fKr4PI + new Vector3(fKm4PI)) * -fScatter);
                         v3FrontColor += v3Attenuate * (fDepth * fScaledLength);
@@ -307,13 +310,13 @@ namespace AtmosphericScatteringTest
 
 
 
-            red = MathHelper.Clamp(red, 0, 1);
-            green = MathHelper.Clamp(green, 0, 1);
-            blue = MathHelper.Clamp(blue, 0, 1);
-            alpha = MathHelper.Clamp(alpha, 0, 1);
+            red = MathHelper.Clamp(red, 0, 1f);
+            green = MathHelper.Clamp(green, 0, 1f);
+            blue = MathHelper.Clamp(blue, -0, 1f);
+            alpha = MathHelper.Clamp(alpha, 0, 1f);
 
 
-            return Color.FromArgb((int)(alpha * 255), (int)(red * 255), (int)(green * 255), (int)(blue * 255));
+            return Color.FromArgb((int)((alpha) * 255), (int)((red) * 255), (int)((green) * 255), (int)((blue) * 255));
         }
 
         Vector3 Exp(Vector3 v)
