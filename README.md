@@ -9,3 +9,7 @@ Depends on some XNA classes. Dependencies can be resolved by referencing to one 
 - MonoGame
 - Farseer Physics
 - XNA
+
+
+Also subject of this SO question:
+- http://gamedev.stackexchange.com/questions/50373/atmospheric-scattering-sky-from-space-artifacts
