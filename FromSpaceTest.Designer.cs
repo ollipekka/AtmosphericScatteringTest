@@ -144,7 +144,7 @@
             this.lblSamples.Name = "lblSamples";
             this.lblSamples.Size = new System.Drawing.Size(47, 13);
             this.lblSamples.TabIndex = 25;
-            this.lblSamples.Text = "Sampels";
+            this.lblSamples.Text = "Samples";
             // 
             // nmrWavelengthB
             // 
