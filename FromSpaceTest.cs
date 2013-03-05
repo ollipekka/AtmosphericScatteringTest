@@ -134,7 +134,7 @@ namespace AtmosphericScatteringTest
                     Vector3 v3SampleRay = v3Ray * fSampleLength;
                     Vector3 v3SamplePoint = v3Start + v3SampleRay * 0.5f;
                     // Now loop through the sample rays
-                    Vector3 v3FrontColor = new Vector3();
+                    Vector3 v3FrontColor = new Vector3(0);
                     for (int i = 0; i < nSamples; i++)
                     {
                         float fHeight = v3SamplePoint.Length();
@@ -142,7 +142,7 @@ namespace AtmosphericScatteringTest
                         float fLightAngle = Vector3.Dot(v3LightPos, v3SamplePoint) / fHeight;
                         float fCameraAngle = Vector3.Dot(v3Ray, v3SamplePoint) / fHeight;
                         //fCameraAngle = MathHelper.Clamp(fCameraAngle, 0, 1);
-                        //fCameraAngle = 1;
+                        fCameraAngle = 1;
                         float fScatter = (fStartOffset + fDepth * (Scale(fLightAngle, fScaleDepth) - Scale(fCameraAngle, fScaleDepth)));
                         Vector3 v3Attenuate = Exp((v3InvWavelength * fKr4PI + new Vector3(fKm4PI)) * -fScatter);
                         v3FrontColor += v3Attenuate * (fDepth * fScaledLength);
@@ -185,7 +185,6 @@ namespace AtmosphericScatteringTest
             Vector3 v3LightPos = Vector3.Normalize(lightPosition);        // The Light Position
             Vector3 v3InvWavelength = new Vector3(1 / (float)Math.Pow(wavelength.X, 4), 1 / (float)Math.Pow(wavelength.Y, 4), 1 / (float)Math.Pow(wavelength.Z, 4));   // 1 / pow(wavelength, 4) for the red, green, and blue channels
 
-            float fExposure = -2;
             float fKrESun = Kr * ESun;         // Kr * ESun
             float fKmESun = Km * ESun;          // Km * ESun
             float fKr4PI = Kr * 4.0f * (float)Math.PI;           // Kr * 4 * PI
