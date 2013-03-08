@@ -148,7 +148,7 @@ namespace AtmosphericScatteringTest
                         }
 
                         float fCameraAngle = Vector3.Dot(-v3Ray, v3SamplePoint) / fHeight;
-                        fCameraAngle = 1;
+                        //fCameraAngle = 1;
                         float fCameraDepth = Scale(fCameraAngle, fScaleDepth);
                         float fScatter = (fStartOffset + fDepth * (fLightDepth - fCameraDepth));
                         Vector3 v3Attenuate = Exp((v3InvWavelength * fKr4PI + new Vector3(fKm4PI)) * -fScatter);
