@@ -140,10 +140,17 @@ namespace AtmosphericScatteringTest
                         float fHeight = v3SamplePoint.Length();
                         float fDepth = (float)Math.Exp(fScaleOverScaleDepth * (fInnerRadius - fHeight));
                         float fLightAngle = Vector3.Dot(v3LightPos, v3SamplePoint) / fHeight;
-                        float fCameraAngle = Vector3.Dot(v3Ray, v3SamplePoint) / fHeight;
-                        //fCameraAngle = MathHelper.Clamp(fCameraAngle, 0, 1);
+                        float fLightDepth = Scale(fLightAngle, fScaleDepth);
+
+                        if (fLightDepth < float.Epsilon)
+                        {
+                            continue;
+                        }
+
+                        float fCameraAngle = Vector3.Dot(-v3Ray, v3SamplePoint) / fHeight;
                         fCameraAngle = 1;
-                        float fScatter = (fStartOffset + fDepth * (Scale(fLightAngle, fScaleDepth) - Scale(fCameraAngle, fScaleDepth)));
+                        float fCameraDepth = Scale(fCameraAngle, fScaleDepth);
+                        float fScatter = (fStartOffset + fDepth * (fLightDepth - fCameraDepth));
                         Vector3 v3Attenuate = Exp((v3InvWavelength * fKr4PI + new Vector3(fKm4PI)) * -fScatter);
                         v3FrontColor += v3Attenuate * (fDepth * fScaledLength);
                         v3SamplePoint += v3SampleRay;
@@ -153,8 +160,7 @@ namespace AtmosphericScatteringTest
                     Vector3 vMieColor = v3FrontColor * fKmESun;
                     Vector3 vRayleighColor = v3FrontColor * (v3InvWavelength * fKrESun);
 
-                    Vector3 v3Direction = v3CameraPos - v3Pos;
-                    float fCos = Vector3.Dot(v3LightPos, v3Direction) / v3Direction.Length();
+                    float fCos = Vector3.Dot(-v3Ray, v3LightPos);
                     float fCos2 = fCos * fCos;
                     float fRayleighPhase = 0.75f * (1.0f + fCos2);
                     float fMiePhase = 1.5f * ((1.0f - fg2) / (2.0f + fg2)) * (1.0f + fCos2) / (float)Math.Pow(1.0f + fg2 - 2.0f * fg * fCos, 1.5f);
@@ -233,8 +239,16 @@ namespace AtmosphericScatteringTest
                     float fDepth = (float)Math.Exp((fInnerRadius - fOuterRadius) / fScaleDepth);
                     float fCameraAngle = Vector3.Dot(-v3Ray, v3Pos) / v3Pos.Length();
                     float fLightAngle = Vector3.Dot(v3LightPos, v3Pos) / v3Pos.Length();
+
+
                     float fCameraScale = Scale(fCameraAngle, fScaleDepth);
                     float fLightScale = Scale(fLightAngle, fScaleDepth);
+
+
+                    if (fLightScale < float.Epsilon)
+                    {
+                        continue;
+                    }
                     float fCameraOffset = fDepth * fCameraScale;
                     float fTemp = (fLightScale + fCameraScale);
 
